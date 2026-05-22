@@ -62,24 +62,24 @@
 #         print("Error, sólo números enteros.")
 
 # Cuarto ejercicio
-# while True:
-#     try:
-#         num = int(input("Ingrese la cantidad de pasajes a vender: "))
-#         break
-#     except:
-#         print("El numero debe ser entero.")
+while True:
+    try:
+        num = int(input("Ingrese la cantidad de pasajes a vender: "))
+        break
+    except ValueError:
+        print("El numero debe ser entero.")
 
-# totalIngresos = 0
-# for i in range(num):
-#     while True:
-#         try:
-#             precio = int(input(f"Ingrese el valor del {i + 1}° pasaje: "))
-#             totalIngresos += precio
-#             break
-#         except ValueError as e:
-#             print("Necesitas números enteros.")
-#             print(f"Error: {e}")
-# print(f"El precio total a pagar es ${totalIngresos}")
+totalIngresos = 0
+for i in range(num):
+    while True:
+        try:
+            precio = int(input(f"Ingrese el valor del {i + 1}° pasaje: "))
+            totalIngresos += precio
+            break
+        except ValueError as e:
+            print("Necesitas números enteros.")
+            print(f"Error: {e}")
+print(f"El precio total a pagar es ${totalIngresos}")
 
 # Quinto ejercicio
 bultos = int(input("Ingresa la cantidad de bultos: "))
@@ -97,3 +97,11 @@ for i in range(bultos):
     elif peso >= 6:
         valNor += 2000
         cantNor += 1
+    else:
+        print("Peso ingresado incorrecto (1-10kg)")
+
+total += valLiv + valNor
+
+print(f"{cantLiv} bultos livianos ${valLiv}")
+print(f"{cantNor} bultos livianos ${valNor}")
+print(f"Valor total a pagar: {total}")
