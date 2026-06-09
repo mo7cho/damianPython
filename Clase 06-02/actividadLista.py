@@ -43,24 +43,25 @@
 # print(f"Suma total: {resultado}")
 
 # Ejercicio 3
-def contar_letras(texto):
-    conteo = {}
+# texto = "programacion"
 
-    for letra in texto:
-        if letra.isalpha():  # Solo cuenta letras
-            letra = letra.lower()  # Convierte a minúscula
-            if letra in conteo:
-                conteo[letra] += 1
-            else:
-                conteo[letra] = 1
+# frecuencia = {}
 
-    return conteo
+# for letra in texto:
+#     frecuencia[letra] = frecuencia.get(letra, 0) + 1
 
+# for letra, cantidad in frecuencia.items():
+#     print(f"- {letra}: {cantidad}")
 
-# Ejemplo de uso
-texto = input("Ingrese un texto: ")
-resultado = contar_letras(texto)
+# Ejercicio 4
+alumnos = {"Ana": 7.5, "Luis": 5.0, "Pedro": 6.0, "María": 4.5, "Carlos": 8.2}
+aprobados = []
 
-print("\nCantidad de cada letra:")
-for letra, cantidad in resultado.items():
-    print(f"{letra}: {cantidad}")
+for alumno, nota in alumnos.items():
+    if nota >= 6.0:
+        aprobados.append(alumno)
+
+print("Lista de alumnos aprobados:")
+
+for aprobado in aprobados:
+    print(f"- {aprobado}")
